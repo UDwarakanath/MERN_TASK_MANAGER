@@ -2,8 +2,14 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 // const connectDB = require("./config/connectDB");
 const { default: mongoose } = require("mongoose");
+const Task = require("./model/taskModel");
 const app = express();
 
+// MiddleWares
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
+// Routes
 app.get("/", (req, res) => {
   res.send(`<html>
     <body>
@@ -12,11 +18,18 @@ app.get("/", (req, res) => {
   </html>`);
 });
 
+  // Create task
 app.post("/api/tasks",async (req,res)=>{
-  console.log(req.body,"this is the body")
-  res.send("Task Created successfully")
+  try {
+    const task = await Task.create(req.body)
+    console.log(task)
+    res.status(200).json(task)
+  } catch (error) {
+    res.status(500).json({msg:error.message})
+  }
 })
 
+// connetion to DataBase
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
