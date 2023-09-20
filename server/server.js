@@ -29,6 +29,18 @@ app.post("/api/tasks",async (req,res)=>{
   }
 })
 
+// Get/Read All tasks
+
+app.get("/api/tasks",async (req,res)=>{
+  try {
+    const task = await Task.find()
+    console.log(task)
+    res.status(200).json(task)
+  } catch (error) {
+    res.status(500).json({msg:error.message})
+  }
+})
+
 // connetion to DataBase
 mongoose
   .connect(process.env.MONGO_URI)
