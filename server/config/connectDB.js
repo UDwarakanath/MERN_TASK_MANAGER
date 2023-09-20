@@ -11,3 +11,22 @@ const connectDB = async () =>{
 }
 
 module.exports = connectDB
+
+
+// use below to connect DB
+
+// const startServer = async ()=>{
+//     try {
+//         await connectDB()
+//         const PORT = process.env.POR || 5000;
+
+// app.listen(PORT, () => {
+//   console.log(`Server running on Port ${PORT}`);
+// });
+
+//     } catch (error) {
+//         console.log("error at connection",error)
+//     }
+// }
+
+// startServer()
