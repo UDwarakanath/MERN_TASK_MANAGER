@@ -10,20 +10,20 @@ const {
 const router = express.Router();
 
 // Create task
-router.post("/api/tasks", createTask);
+router.post("/", createTask);
 
 // Get/Read All tasks
 
-router.get("/api/tasks", getAllTasks);
+router.get("/", getAllTasks);
 
 // Get/Read A tasks
 
-router.get("/api/tasks/:id", getATask);
+router.get("/:id", getATask);
 
 // Delete a Task
-router.delete("/api/tasks/:id", deteteAtask);
+router.delete("/:id", deteteAtask);
 
 // Update a Task
-router.patch("/api/tasks/:id", updateATask);
+router.patch("/:id", updateATask);
 
 module.exports = router;

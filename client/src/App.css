@@ -1,0 +1,56 @@
+
+.App{
+min-width: 50%;
+   position: absolute;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   background-color: var(--color-white);
+   padding: 1rem;
+   
+}
+
+h1{
+    text-align: center;
+}
+.task-form{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.task-input{
+    width :15rem;
+    padding: 1rem;
+    border-style: none;
+    font-size: medium;
+    font-weight: bold;
+    outline-style: none;
+}
+
+.task-button{
+    width: auto;
+    padding: 0.5rem 1.2rem;
+    font: bold;
+    border: none;
+    background-color: var( --color-purple);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.task{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-left: 0.3rem solid red;
+}
+
+.icons{
+    display: flex;
+    gap: 6px;
+}
+.divider{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    }
